@@ -14,7 +14,7 @@ const contactRoutes = require('./routes/contactRoutes')
 
 const AppError = require('./utils/appError')
 const globalErrorHandler = require('./controllers/errorController')
-require('dotenv').config()
+if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 const app = express()
 
