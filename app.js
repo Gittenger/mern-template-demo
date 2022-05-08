@@ -46,7 +46,11 @@ app.use(cors(corsOptions))
 app.options('*', cors())
 
 // security
-app.use(helmet())
+app.use(
+	helmet({
+		contentSecurityPolicy: false,
+	})
+)
 app.use(mongoSanitize())
 app.use(xss())
 
